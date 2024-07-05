@@ -1,0 +1,13 @@
+CHIP Xor {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Not(in=a , out=acomp );
+    And(a=acomp , b=b , out=p1 );
+
+    Not(in=b , out=bcomp );
+    And(a=a , b=bcomp , out=p2 );
+
+    Or(a=p1 , b=p2 , out=out );
+}
